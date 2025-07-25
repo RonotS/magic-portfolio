@@ -2,7 +2,7 @@
 
 View the [demo here](https://demo.magic-portfolio.com).
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+![Aaron Santos Portfolio](https://demo.magic-portfolio.com/images/projects/arcade-ai-template/cover-01.png)
 
 
 # **Getting started**
