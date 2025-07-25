@@ -1,0 +1,219 @@
+---
+title: "React and Next.js: Building Modern Web Applications"
+summary: "Exploring advanced React patterns, Next.js features, and modern JavaScript development practices for building scalable, performant web applications."
+image: "/images/og/home.jpg"
+publishedAt: "2024-08-10"
+tag: "Frontend Development"
+---
+
+## The React Ecosystem in 2024
+
+React continues to evolve, and with Next.js as a powerful framework, we can build incredibly sophisticated web applications. The combination offers server-side rendering, static generation, and excellent developer experience.
+
+## Advanced React Patterns
+
+### Custom Hooks for Logic Reuse
+Creating reusable logic with custom hooks improves code organization and testability:
+
+```javascript
+// hooks/useLocalStorage.js
+import { useState, useEffect } from 'react';
+
+export function useLocalStorage(key, initialValue) {
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      return initialValue;
+    }
+  });
+
+  const setValue = (value) => {
+    try {
+      setStoredValue(value);
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error('Error saving to localStorage:', error);
+    }
+  };
+
+  return [storedValue, setValue];
+}
+```
+
+### Context API for State Management
+For complex state management without external libraries:
+
+```javascript
+// context/AppContext.js
+import { createContext, useContext, useReducer } from 'react';
+
+const AppContext = createContext();
+
+const appReducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_USER':
+      return { ...state, user: action.payload };
+    case 'SET_THEME':
+      return { ...state, theme: action.payload };
+    default:
+      return state;
+  }
+};
+
+export function AppProvider({ children }) {
+  const [state, dispatch] = useReducer(appReducer, {
+    user: null,
+    theme: 'light'
+  });
+
+  return (
+    <AppContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AppContext.Provider>
+  );
+}
+
+export const useApp = () => {
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error('useApp must be used within AppProvider');
+  }
+  return context;
+};
+```
+
+## Next.js Advanced Features
+
+### App Router and Server Components
+The new App Router brings powerful capabilities:
+
+```javascript
+// app/blog/[slug]/page.js
+import { notFound } from 'next/navigation';
+
+async function getBlogPost(slug) {
+  const res = await fetch(`${process.env.API_URL}/posts/${slug}`, {
+    next: { revalidate: 3600 } // Revalidate every hour
+  });
+  
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export default async function BlogPost({ params }) {
+  const post = await getBlogPost(params.slug);
+  
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </article>
+  );
+}
+
+export async function generateMetadata({ params }) {
+  const post = await getBlogPost(params.slug);
+  
+  return {
+    title: post?.title || 'Post Not Found',
+    description: post?.excerpt
+  };
+}
+```
+
+### API Routes and Middleware
+Building robust API endpoints:
+
+```javascript
+// app/api/users/route.js
+import { NextResponse } from 'next/server';
+import { auth } from '@/lib/auth';
+
+export async function GET(request) {
+  try {
+    const session = await auth(request);
+    
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const users = await fetchUsers();
+    return NextResponse.json(users);
+  } catch (error) {
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
+}
+```
+
+## Performance Optimization
+
+### Code Splitting and Lazy Loading
+```javascript
+import { lazy, Suspense } from 'react';
+
+const HeavyComponent = lazy(() => import('./HeavyComponent'));
+
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HeavyComponent />
+    </Suspense>
+  );
+}
+```
+
+### Image Optimization
+Next.js Image component provides automatic optimization:
+
+```javascript
+import Image from 'next/image';
+
+export default function ProductCard({ product }) {
+  return (
+    <div className="product-card">
+      <Image
+        src={product.image}
+        alt={product.name}
+        width={300}
+        height={200}
+        priority={product.featured}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,..."
+      />
+    </div>
+  );
+}
+```
+
+## Testing Strategies
+
+Comprehensive testing ensures application reliability:
+
+```javascript
+// __tests__/components/Button.test.js
+import { render, screen, fireEvent } from '@testing-library/react';
+import Button from '@/components/Button';
+
+describe('Button Component', () => {
+  it('renders with correct text', () => {
+    render(<Button>Click me</Button>);
+    expect(screen.getByText('Click me')).toBeInTheDocument();
+  });
+
+  it('calls onClick handler when clicked', () => {
+    const handleClick = jest.fn();
+    render(<Button onClick={handleClick}>Click me</Button>);
+    
+    fireEvent.click(screen.getByText('Click me'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+});
+```
+
+The React and Next.js ecosystem continues to evolve rapidly, offering developers powerful tools for building modern, performant web applications. Staying current with best practices and new features is essential for delivering exceptional user experiences.

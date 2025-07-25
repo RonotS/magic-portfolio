@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Aaron",
+  lastName: "Santos",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Web Developer and Web Designer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "grow@sebusinesssolutions.co",
+  location: "Asia/Manila", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Tagalog"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -30,17 +30,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/AphilSantos",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/aaron-santos-a1561b22b/",
   },
   {
     name: "Email",
@@ -55,16 +50,16 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Learn, discover, build, repeat – crafting digital solutions that matter</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Recent project: <strong className="ml-4">Arcade AI Template</strong></>,
+    href: "/work/arcade-vercel-ai-template",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Aaron, a passionate developer who believes in continuous learning and meaningful impact. From the Philippines,
+      <br /> I create web solutions that bridge technology with real-world needs, one project at a time.
     </>
   ),
 };
@@ -90,9 +85,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Learn and discover and then learn and discover again! Being productive helps me be more responsible.
+        Being part of something whether it be great or small adds so much meaning to my life. I envelop myself
+        with stickers of achievement and I desire to expand my reach to all as possible.
       </>
     ),
   },
@@ -101,41 +96,79 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "BrandLume Inc",
+        timeframe: "January 2023 - Present (2 years 7 months)",
+        role: "Web Developer and Web Designer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Bringing a unique combination of technical skills and a passion for the industry to every project.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            With extensive experience in both design and development, I am able to create visually stunning
+            and client-converting websites that effectively communicate the message and goals of my clients
+            in the health and wellness field.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "ihelpcreate",
+        timeframe: "July 2021 - Present (4 years 1 month)",
+        role: "Web Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Located in Cagayan De Oro City, Northern Mindanao, Philippines
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Global Managed Services
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "BYU-Pathway Worldwide",
+        timeframe: "June 2023 - November 2024 (1 year 6 months)",
+        role: "Education Mentor",
+        achievements: [
+          <>
+            As a dedicated Peer Mentor at BYU-Pathway Worldwide, I have the privilege of guiding and
+            supporting students from diverse backgrounds on their educational journeys.
+          </>,
+          <>
+            My role involves creating a welcoming and nurturing environment that fosters academic success
+            and personal growth. By sharing insights, resources, and strategies tailored to individual needs,
+            I help students navigate challenges and maximize their learning experience.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Bloom Educational",
+        timeframe: "June 2023 - May 2024 (1 year)",
+        role: "Mentor",
+        achievements: [
+          <>
+            As a dedicated Peer Mentor at BYU-Pathway Worldwide, I have the privilege of guiding and
+            supporting students from diverse backgrounds on their educational journeys.
+          </>,
+          <>
+            My role involves creating a welcoming and nurturing environment that fosters academic success
+            and personal growth. By sharing insights, resources, and strategies tailored to individual needs,
+            I help students navigate challenges and maximize their learning experience.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "The Church of Jesus Christ of Latter-day Saints",
+        timeframe: "June 2019 - June 2021 (2 years 1 month)",
+        role: "Missionary",
+        achievements: [
+          <>
+            Full-time volunteer to share the gospel of Jesus Christ in Quezon City, National Capital Region, Philippines.
+          </>,
+          <>
+            Led in training and administration of the mission for 21 months.
           </>,
         ],
         images: [],
@@ -144,53 +177,56 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Liceo de Cagayan University",
+        description: <>Bachelor's degree, Electrical, Electronics and Communications Engineering · (September 2021 - June 2025)</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Brigham Young University - Idaho",
+        description: <>Applied Technology, Responsive Web Development · (September 2021 - April 2025)</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "PHP & Laravel",
+        description: <>Server-side development with PHP and Laravel framework for robust web applications.</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "WordPress",
+        description: <>Custom WordPress development, themes, and plugins for content management solutions.</>,
+        images: [],
+      },
+      {
+        title: "Liquid & Shopify",
+        description: <>E-commerce development using Shopify's Liquid templating language for online stores.</>,
+        images: [],
+      },
+      {
+        title: "Python & Django",
+        description: <>Backend development with Python and Django framework for scalable web applications.</>,
+        images: [],
+      },
+      {
+        title: "NodeJS, NextJS & ReactJS",
+        description: <>Modern JavaScript development with Node.js backend and React/Next.js frontend frameworks.</>,
+        images: [],
+      },
+      {
+        title: "Electron, Expo & Capacitor",
+        description: <>Cross-platform application development for desktop and mobile using modern web technologies.</>,
+        images: [],
+      },
+      {
+        title: "Vercel AI SDK",
+        description: <>AI-powered automation and intelligent features integration using Vercel's AI SDK.</>,
+        images: [],
       },
     ],
   },
@@ -199,8 +235,8 @@ const about = {
 const blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Development insights and technical deep-dives",
+  description: `Technical articles and development insights by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -214,55 +250,4 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work };
