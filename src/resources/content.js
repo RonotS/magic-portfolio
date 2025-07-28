@@ -78,7 +78,7 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "mailto:aphilvs@gmail.com",
   },
   intro: {
     display: true,
