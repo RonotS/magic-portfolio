@@ -1,0 +1,90 @@
+---
+title: "Accessibility in Web Development: Building for Everyone"
+summary: "A guide to creating inclusive, accessible websites that meet WCAG standards and provide equal experiences for all users."
+image: "/images/projects/accessibility/cover1.jpg"
+publishedAt: "2025-02-22"
+tag: "Web Development"
+---
+
+## Introduction
+
+The web was designed to be a platform for everyone, yet millions of people face barriers when accessing digital content. Accessibility in web development ensures that websites and applications can be used by **all users, including those with disabilities** such as vision, hearing, motor, or cognitive impairments.  
+
+Beyond being a best practice, accessibility is also a legal requirement in many regions and a ranking factor for search engines. More importantly, it’s about **inclusivity** — making sure no one is left out of the digital experience.  
+
+This post explores why accessibility matters, the key principles behind it, and practical steps developers can take to make their projects compliant with WCAG (Web Content Accessibility Guidelines).  
+
+---
+
+## Why Accessibility Matters
+
+- **Equal Access:** Everyone should have the ability to navigate, interact with, and understand online content.  
+- **Legal Compliance:** Regulations like the ADA (U.S.) and EN 301 549 (EU) mandate accessible digital experiences.  
+- **SEO Benefits:** Accessible websites often perform better in search rankings due to improved structure and usability.  
+- **Business Value:** By designing inclusively, you open your site to a larger audience and build stronger trust with users.  
+
+---
+
+## WCAG Principles
+
+WCAG (Web Content Accessibility Guidelines) define four main principles, often summarized as **POUR**:  
+
+1. **Perceivable** – Content must be presented in ways users can perceive (e.g., alt text for images).  
+2. **Operable** – Interfaces must be easy to navigate and operate (e.g., keyboard-friendly navigation).  
+3. **Understandable** – Information and UI should be clear and consistent.  
+4. **Robust** – Content should work across different devices and assistive technologies.  
+
+---
+
+## Practical Accessibility Techniques
+
+### 1. Semantic HTML
+Use proper elements (`<header>`, `<nav>`, `<main>`, `<footer>`, `<main>` , `<section>`, `<table>`, `<form>`, `<button>`) so assistive technologies can interpret structure correctly.  
+
+```html
+<html>
+    <head></head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/home">My Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <section>
+            <h1>Welcome</h1>
+            <p>Content Area</p>
+
+            <section>
+                <h2>Form</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <form>
+                <label>Name:</label><br />
+                <input type="text" id="name" name="name" required /><br />
+
+                <label for="message">Message:</label><br />
+                <textarea id="message" name="message" rows="5" required></textarea><br />
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    </body>
+    </html>

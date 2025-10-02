@@ -1,19 +1,50 @@
 ---
 title: "Optimizing Web Performance with Core Web Vitals"
-summary: "A deep dive into Google's Core Web Vitals and how developers can improve site speed, interactivity, and visual stability for better user experiences."
+summary: "Learn how Core Web Vitals impact user experience, SEO, and conversions — and discover practical strategies to optimize your website for speed, responsiveness, and stability."
 image: "/images/projects/performance-web/cover-01.png"
-publishedAt: "2025-01-20"
+publishedAt: "2025-02-05"
 tag: "Web Performance"
 ---
 
-## Understanding Core Web Vitals
+## Introduction
 
-Performance has become a defining factor in modern web development. Google introduced Core Web Vitals as key metrics to measure user experience, focusing on **loading speed, interactivity, and visual stability**.
+In today’s digital landscape, performance is **as important as design and functionality**. Studies show that users abandon websites that take longer than 3 seconds to load, and every delay negatively impacts engagement, conversions, and trust.  
 
-## Key Metrics
+To address this, Google introduced **Core Web Vitals**, a standardized set of metrics that measure real-world user experience. These metrics directly influence SEO rankings, making them not just a technical concern but a business-critical priority.  
 
-### Largest Contentful Paint (LCP)
-LCP measures how quickly the largest visible content (like an image or heading) appears. A good LCP score is under **2.5 seconds**.
+This guide covers everything you need to know — what Core Web Vitals are, why they matter, and how to measure, optimize, and future-proof your website for speed and stability.  
+
+---
+
+## Why Core Web Vitals Matter
+
+Core Web Vitals are important because they connect **user experience** with **business outcomes**.  
+
+- **SEO Impact:** Google uses Core Web Vitals as a ranking signal. Poor scores can hurt your visibility in search results.  
+- **User Experience:** Fast, responsive websites increase satisfaction and reduce frustration.  
+- **Conversions & Revenue:** Faster sites consistently see higher conversion rates and lower bounce rates.  
+
+---
+
+## The Three Core Web Vitals
+
+### 1. Largest Contentful Paint (LCP) – Loading Performance
+
+**Definition:** Measures how long it takes for the largest visible content (image, video, or heading) to load.  
+- **Good:** ≤ 2.5s  
+- **Needs Improvement:** 2.5–4s  
+- **Poor:** > 4s  
+
+**Common Issues:**  
+- Slow server response  
+- Unoptimized images  
+- Render-blocking CSS or JavaScript  
+
+**How to Improve:**  
+- Compress and serve images in next-gen formats (`WebP`, `AVIF`)  
+- Preload hero images and fonts  
+- Use server-side rendering (SSR) or static generation  
+- Minimize render-blocking resources  
 
 ```html
-<img src="/hero-banner.jpg" alt="Hero Banner" loading="lazy" />
+<link rel="preload" as="image" href="/hero-banner.webp" />
